@@ -53,7 +53,7 @@ layout: center
 
 # What's the plan ?
 
-Understand, why we are probably not going to use Typescript to represent Enums 😅
+Understand, why we are probably not going to use `enum` in Typescript to represent Enums 😅
 
 ---
 handle: 'Stéphane Pires'
@@ -238,7 +238,7 @@ layout: center
 # Key takeaways
 
 * Still "broken" for functions relying on the Enums 😡
-* We can't iterate on const Enums (Typescript does't create the javascript objet dû to an optimization) 😕
+* We can't iterate on const Enums (Typescript does't create the javascript object due to an optimization) 😕
 
 
 ---
@@ -247,7 +247,7 @@ logoHeader: '/typescript-blue.png'
 layout: center
 ---
 
-# const "Enum" Objet as const
+# const "Enum" object as const
 
 ```ts {monaco}
 const Ingredients =  {
@@ -277,7 +277,7 @@ logoHeader: '/typescript-blue.png'
 layout: center
 ---
 
-# const "Enum" Objet as const (Iterable)
+# const "Enum" object as const (Iterable)
 
 ```ts {monaco}
 const Ingredients =  {
