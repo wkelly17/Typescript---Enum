@@ -56,16 +56,20 @@ layout: center
 Understand, why we are probably not going to use Typescript to represent Enums 😅
 
 ---
-layout: new-section
+handle: 'Stéphane Pires'
+logoHeader: '/typescript-blue.png'
+layout: center
 ---
 
-# Represent the ingredients i have at hands
+# Represent the ingredients we have in a kitchen
 
 ---
 handle: 'Stéphane Pires'
 logoHeader: '/typescript-blue.png'
 layout: center
 ---
+
+# Default Enum
 
 ```ts {monaco}
 enum Ingredients {
@@ -101,6 +105,8 @@ logoHeader: '/typescript-blue.png'
 layout: center
 ---
 
+# String Enum
+
 ```ts {monaco}
 enum Ingredients {
   Apple = "Apple",
@@ -134,12 +140,12 @@ logoHeader: '/typescript-blue.png'
 layout: center
 ---
 
+# Heterogenous Enum
+
 ```ts {monaco}
 // Don't try this at home, it can be dangerous
 enum Ingredients {
   Apple = "Apple",
-  Pear = "Pear",
-  Pineapple = "Pineapple",
   Banana = "Banana",
   Peach = 1,
 }
@@ -160,6 +166,8 @@ handle: Stéphane Pires
 logoHeader: /typescript-blue.png
 layout: center
 ---
+
+#  Heterogenous Enum (Iterable)
 
 ```ts {monaco}
 enum Ingredients {
@@ -204,6 +212,8 @@ logoHeader: '/typescript-blue.png'
 layout: center
 ---
 
+# Const Heterogenous Enum
+
 ```ts {monaco}
 const enum  Ingredients {
   Apple = "Apple",
@@ -237,6 +247,8 @@ logoHeader: '/typescript-blue.png'
 layout: center
 ---
 
+# const "Enum" Objet as const
+
 ```ts {monaco}
 const Ingredients =  {
   Apple: "Apple",
@@ -255,7 +267,6 @@ Ingredients['ToupiMagique']
 Ingredients[17]
 
 sliceIngredients(Ingredients.Apple)
-sliceIngredients('nawak')
 sliceIngredients(42)
 
 ```
@@ -265,6 +276,8 @@ handle: 'Stéphane Pires'
 logoHeader: '/typescript-blue.png'
 layout: center
 ---
+
+# const "Enum" Objet as const (Iterable)
 
 ```ts {monaco}
 const Ingredients =  {
@@ -279,8 +292,6 @@ for (let ingredient in Ingredients){
 }
 // Outputs =>
 // Apple
-// Pear
-// Pineapple
 // Banana
 // Peach
 ```
@@ -317,7 +328,7 @@ layout: center
 
 This presentation used : 
 
-* [Slidev v0.33.0](https://sli.dev)
+* [Slidev v0.33.0 (BETA)](https://sli.dev)
 * [Unicorn Theme](https://github.com/dawntraoz/slidev-theme-unicorn)
 
 ___
