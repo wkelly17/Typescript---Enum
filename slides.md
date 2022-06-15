@@ -100,8 +100,8 @@ layout: center
 
 
 ---
-handle: 'Stéphane Pires'
-logoHeader: '/typescript-blue.png'
+handle: Stéphane Pires
+logoHeader: /typescript-blue.png
 layout: center
 ---
 
@@ -119,8 +119,9 @@ function sliceIngredients(ingredients: Ingredients) {
 
 Ingredients[17] 
 sliceIngredients(Ingredients.Banana)
-sliceIngredients(12)
+sliceIngredients('Apple')
 ```
+
 
 ---
 handle: 'Stéphane Pires'
@@ -207,8 +208,8 @@ layout: center
 * We can access enum value using two ways "string" value & "key" 😕
 
 ---
-handle: 'Stéphane Pires'
-logoHeader: '/typescript-blue.png'
+handle: Stéphane Pires
+logoHeader: /typescript-blue.png
 layout: center
 ---
 
@@ -229,6 +230,8 @@ Ingredients[17]
 sliceIngredients(Ingredients.Banana)
 sliceIngredients(12)
 ```
+
+
 ---
 handle: 'Stéphane Pires'
 logoHeader: '/typescript-blue.png'
@@ -242,52 +245,56 @@ layout: center
 
 
 ---
-handle: 'Stéphane Pires'
-logoHeader: '/typescript-blue.png'
+handle: Stéphane Pires
+logoHeader: /typescript-blue.png
 layout: center
 ---
 
 # const "Enum" object as const
 
 ```ts {monaco}
-const Ingredients =  {
+const INGREDIENTS =  {
   Apple: "Apple",
   Banana: "Banana",
   Peach: 1
-} as const 
+} as const // Uniquement "Valeur"
 
-type TypeIngredients = typeof Ingredients[keyof typeof Ingredients];
+type TypeIngredients = typeof INGREDIENTS[keyof typeof INGREDIENTS]; // Uniquement "Type"
 
 function sliceIngredients(ingredients: TypeIngredients) {
   return "Sliced It"
 }
 
-Ingredients.Apple 
-Ingredients['ToupiMagique']
-Ingredients[17]
+INGREDIENTS.Apple 
+INGREDIENTS['ToupiMagique']
+INGREDIENTS[17]
 
-sliceIngredients(Ingredients.Apple)
+sliceIngredients(INGREDIENTS.Apple)
 sliceIngredients(42)
 
 ```
 
+<!--
+// Voir pour brander les enums
+-->
+
 ---
-handle: 'Stéphane Pires'
-logoHeader: '/typescript-blue.png'
+handle: Stéphane Pires
+logoHeader: /typescript-blue.png
 layout: center
 ---
 
 # const "Enum" object as const (Iterable)
 
 ```ts {monaco}
-const Ingredients =  {
+const INGREDIENTS =  {
   Apple: "Apple",
   Banana: "Banana",
   Peach: 1
 } as const 
 
 
-for (let ingredient in Ingredients){  
+for (let ingredient in INGREDIENTS){  
   console.log('ingredient', ingredient)
 }
 // Outputs =>
@@ -295,16 +302,19 @@ for (let ingredient in Ingredients){
 // Banana
 // Peach
 ```
+
+
 ---
-handle: 'Stéphane Pires'
-logoHeader: '/typescript-blue.png'
+handle: Stéphane Pires
+logoHeader: /typescript-blue.png
 layout: center
 ---
 
 # Key takeaways
 
-* `const Enum = {//...} as const` saved the game 😀
-* But we have to  use a "weird" trick `typeof X[keyof typeof X]` 😕
+* `const MY_ENUM = {//...} as const` saved the game 😀
+* But we have to  use a "weird" trick `type MyEnum = typeof MY_ENUM[keyof typeof MY_ENUM ]` 😕
+
 
 ---
 handle: 'Stéphane Pires'
@@ -316,7 +326,35 @@ layout: center
 
  String Enum (at your own risk) VS Magic Poney Trick `typeof X[keyof typeof X]` ?
 
-___
+
+---
+handle: Stéphane Pires
+logoHeader: /typescript-blue.png
+layout: center
+---
+
+# Conclusion
+
+* Use `const MY_ENUM = {//...} as const` to declare an Enum
+* Use `type MyEnum = typeof MY_ENUM[keyof typeof MY_ENUM ]` to declare the type 
+* By convention `MY_ENUM` is "Upper case"
+* By convention `MyEnum` is "Capital camel case"
+* Eslint (enum rules ?)
+
+
+---
+handle: Stéphane Pires
+logoHeader: /typescript-blue.png
+layout: center
+---
+
+# Next Step
+
+* When to use [Branding](https://basarat.gitbook.io/typescript/main-1/nominaltyping#using-interfaces) & [Branding (TS Team)](https://github.com/Microsoft/TypeScript/blob/7b48a182c05ea4dea81bab73ecbbe9e013a79e99/src/compiler/types.ts#L693-L698)
+* When to use CreateXXX ?
+* How do we organize declaration of types ?
+* Architecture of types ?
+
 
 ---
 handle: 'Stéphane Pires'

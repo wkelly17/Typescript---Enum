@@ -1,11 +1,14 @@
 // ./setup/monaco.ts
 import { defineMonacoSetup } from '@slidev/types'
 
-export default defineMonacoSetup(() => {
+export default defineMonacoSetup(async (monaco) => {
+
+
   return {
     theme: {
       dark: 'vs-dark',
       light: 'vs',
     },
+    
   }
 })
