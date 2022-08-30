@@ -2,7 +2,7 @@
   "name": "typescript---enum",
   "private": true,
   "scripts": {
-    "build": "slidev build",
+    "build": "slidev build --base /Typescript---Enum/",
     "dev": "slidev --open",
     "export": "slidev export"
   },
